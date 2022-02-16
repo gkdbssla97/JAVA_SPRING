@@ -24,12 +24,12 @@ public class HelloController {
         return "hello " + name; //"hello Spring"
     }
     @GetMapping("hello-api")
-    @ResponseBody
+    @ResponseBody // https:// 응답부에 직접 데이터 삽입
     public Hello helloApi(@RequestParam("name") String name) {
         Hello hello = new Hello();
         hello.setName(name);
 
-        return hello;
+        return hello; // 객체 반환: json방식으로 http 응답으로 return.
     }
 
     static class Hello {
